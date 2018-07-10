@@ -1,0 +1,16 @@
+{
+    "1000":{
+      "aadharNo": "1000",
+      "firstName": "pulkit",
+      "lastName": "golo",
+      "phNo": "999999",
+      "email": "abc@xyz.com"
+    },
+    "1001":{
+      "aadharNo": "1001",
+      "firstName": "Rama",
+      "lastName": "Acharya",
+      "phNo": "999999",
+      "email": "pqr@xyz.com"
+    }
+  }
