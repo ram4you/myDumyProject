@@ -23,7 +23,7 @@ class Register extends Component {
                     loginJsonData: responseJson,
                     dataSource: responseJson.hasOwnProperty(this.state.checkAadharValue),
                 }, () => {
-                    this.state.dataSource ? alert("please add new aadhar Register") : this.props.change(0);
+                    this.state.dataSource ? alert("please add new aadhar Register") : this.saveNewEntry();
                 });
 
             })
@@ -31,6 +31,19 @@ class Register extends Component {
                 console.error(error);
             });
 
+    }
+    saveNewEntry = () => {
+        fetch('http://localhost:8080/site/saveAadhar/', {
+            method: 'POST', // or 'PUT'
+            mode: 'cors',
+            body: JSON.stringify({name: 1}), // data can be `string` or {object}!
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Headers': '*'
+            }
+        }).then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', response));
     }
     checkAadhar = (event) => {
         this.setState({

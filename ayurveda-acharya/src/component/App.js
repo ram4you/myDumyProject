@@ -13,24 +13,30 @@ class App extends Component {
     this.state = {
       'pagename': 0
     };
-
-    this.pages = [
-      <Login  change={this.changePage} />,
-      <Register  change={this.changePage} />,
-      <Dashboard  change={this.changePage} />,
-      <UserBasicDetails change={this.changePage} />
-    ];
-
   }
 
-  changePage = (i) => {
+  changePage = (i, data) => {
     this.setState({
-      pagename: i
+      pagename: i,
+      data
     })
   }
 
   loadComp = (i) => {
-    return this.pages[i];
+    switch(i) {
+      case 0: {
+        return <Login  change={this.changePage} />
+      }
+      case 1: {
+        return <Register  change={this.changePage} />
+      }
+      case 2: {
+        return <Dashboard data = { this.state.data } change={this.changePage} />
+      }
+      case 3: {
+        return <UserBasicDetails change={this.changePage} />
+      }
+    }
   }
 
   nav = () => {

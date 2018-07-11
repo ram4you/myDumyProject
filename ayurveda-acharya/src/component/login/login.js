@@ -13,13 +13,13 @@ class Login extends Component {
         fetch('http://localhost:8080/site/checkAadhar/')
         .then((response) => response.json())
         .then((responseJson) => {
-            console.log( responseJson.hasOwnProperty(this.state.checkAadharValue));
             this.setState({
                 //isLoading: false,
-                loginJsonData: responseJson,
+                loginJsonData: responseJson,    
                 dataSource: responseJson.hasOwnProperty(this.state.checkAadharValue),
+                data: responseJson.hasOwnProperty(this.state.checkAadharValue) ?  responseJson[this.state.checkAadharValue] : {}
             }, ()=>{
-                this.state.dataSource ? this.props.change(2) : alert("please Register");
+                this.state.dataSource ? this.props.change(2, this.state.data) : alert("please Register");
             });
 
         })
