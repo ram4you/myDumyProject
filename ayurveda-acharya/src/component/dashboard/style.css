@@ -1,0 +1,20 @@
+.table, .table td, .table th {
+  border-collapse: collapse;
+}
+
+.tablediv {
+  margin: 10px 0 20px 0;
+  font-size: 12px;
+  color: #ee3124;
+}
+
+.table {
+color: #333;
+}
+
+.table td, .table th {
+  font-size: 12px;
+  border: solid thin #ccc;
+  padding: 5px;
+  text-align: left;
+}

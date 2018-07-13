@@ -9,7 +9,6 @@ class App extends Component {
 
   constructor() {
     super();
-
     this.state = {
       'pagename': 0
     };
@@ -34,28 +33,34 @@ class App extends Component {
         return <Dashboard data = { this.state.data } change={this.changePage} />
       }
       case 3: {
-        return <UserBasicDetails change={this.changePage} />
+        return <UserBasicDetails data = { this.state.data } change={this.changePage} />
       }
     }
   }
 
   nav = () => {
+    const { pagename } = this.state;
     return (
-      <div >
-        <p onClick={() => { this.changePage(0) }} >Login Page</p>
-        {/* <p onClick = { () => { this.changePage(1) } }>Dashboard Page</p> */}
+      <div className="nav">
+        { 
+          pagename !== 0 ? (
+            <span onClick={() => { this.changePage(0) }} >Back</span>
+          ) 
+          : <span>Home</span>
+        }
       </div>
     )
   }
 
   render() {
     return (
-      <div>
+      <div className="main">
+        { this.nav() }
+        <div className="freespace" contentEditable>Clipboard</div>
         {this.loadComp(this.state.pagename)}
       </div>
     )
   }
-
 }
 
 export default App;

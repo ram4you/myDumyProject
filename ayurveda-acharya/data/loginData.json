@@ -1,16 +1,16 @@
 {
-    "1000":{
-      "aadharNo": "1000",
-      "firstName": "pulkit",
-      "lastName": "golo",
-      "phNo": "999999",
-      "email": "abc@xyz.com"
-    },
-    "1001":{
-      "aadharNo": "1001",
-      "firstName": "Rama",
-      "lastName": "Acharya",
-      "phNo": "999999",
-      "email": "pqr@xyz.com"
-    }
+  "1000": {
+    "aadharNo": "1000",
+    "firstName": "Pulkit",
+    "lastName": "Chandra",
+    "phNo": "9910105505",
+    "email": "pulkit.cs@gmail.com"
+  },
+  "1001": {
+    "aadharNo": "1001",
+    "firstName": "rama",
+    "lastName": "Acharya",
+    "phNo": "7011682014",
+    "email": "ramakrushnaa@gmail.com"
   }
+}
